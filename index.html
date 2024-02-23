@@ -33,8 +33,42 @@
     <!-- Ajoutez ici le script pour l'upload -->
     <script src="https://cdn.jsdelivr.net/npm/aws-sdk@2"></script>
     <script>
-        // Code pour l'upload ici
-    </script>
+function uploadFile() {
+        // Configurer AWS
+        AWS.config.update({
+            accessKeyId: 'VOTRE_ACCESS_KEY_ID',
+            secretAccessKey: 'VOTRE_SECRET_ACCESS_KEY',
+            region: 'VOTRE_REGION'
+        });
+
+        // Configurer S3
+        const s3 = new AWS.S3();
+
+        // Obtenir le fichier sélectionné
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+
+        // Définir le chemin dans S3 (peut être personnalisé selon vos besoins)
+        const objectKey = 'uploads/' + file.name;
+
+        // Configuration de l'opération d'upload
+        const params = {
+            Bucket: 'NOM_DE_VOTRE_COMPARTIMENT_S3',
+            Key: objectKey,
+            Body: file
+        };
+
+        // Envoyer le fichier vers S3
+        s3.upload(params, function (err, data) {
+            if (err) {
+                console.error(err);
+                alert('Erreur lors de l\'envoi du fichier vers S3.');
+            } else {
+                console.log('Fichier envoyé avec succès:', data);
+                alert('Fichier envoyé avec succès vers S3.');
+            }
+        });
+    }    </script>
 
 </body>
 </html>
