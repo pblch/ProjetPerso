@@ -38,7 +38,7 @@ function uploadFile() {
         AWS.config.update({
             accessKeyId: 'VOTRE_ACCESS_KEY_ID',
             secretAccessKey: 'VOTRE_SECRET_ACCESS_KEY',
-            region: 'VOTRE_REGION'
+            region: Asie-Pacifique (Singapour) ap-southeast-1
         });
 
         // Configurer S3
@@ -53,7 +53,7 @@ function uploadFile() {
 
         // Configuration de l'opération d'upload
         const params = {
-            Bucket: 'NOM_DE_VOTRE_COMPARTIMENT_S3',
+            Bucket: pdf-viewer-bucket-1,
             Key: objectKey,
             Body: file
         };
