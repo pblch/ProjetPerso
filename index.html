@@ -7,6 +7,8 @@
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="chemin/vers/pdfviewer.js"></script>
 </head>
+
+    
 <body>
 
     <header>
@@ -15,10 +17,11 @@
 
     <main>
         <p>Ce site vous permet de lire des fichiers PDF en ligne.</p>
-        <!-- Ajoutez ici le code pour intégrer le lecteur PDF, par exemple avec PDF.js -->
+        
+        <!-- Intégration du lecteur PDF -->
         <canvas id="pdfCanvas"></canvas>
 
-        <!-- Ajoutez le formulaire d'upload ici -->
+        <!-- Formulaire d'upload -->
         <h2>Uploader un PDF</h2>
         <form id="uploadForm">
             <input type="file" id="fileInput" accept=".pdf">
@@ -30,7 +33,7 @@
         <p>© 2024 Mon Site PDF. Tous droits réservés.</p>
     </footer>
 
-    <!-- Ajoutez ici le script pour l'upload -->
+    <!-- Script d'upload -->
     <script src="https://cdn.jsdelivr.net/npm/aws-sdk@2"></script>
     <script>
 function uploadFile() {
