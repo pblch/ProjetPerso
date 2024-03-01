@@ -16,7 +16,7 @@
     </header>
 
     <main>
-        <p>Ce site vous permet de lire des fichiers PDF en ligne.</p>
+        <p>Ce site vous permet de lire des fichiers PDF en ligne. blabla</p>
         
         <!-- Intégration du lecteur PDF -->
         <canvas id="pdfCanvas"></canvas>
@@ -24,7 +24,8 @@
         <!-- Formulaire d'upload -->
         <h2>Uploader un PDF</h2>
         <form id="uploadForm">
-   
+            <input type="file" id="fileInput" accept=".pdf">
+            <button type="button" onclick="uploadFile()">Envoyer le PDF</button>
         </form>
     </main>
 
